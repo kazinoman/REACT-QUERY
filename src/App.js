@@ -11,8 +11,8 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <h1>React query..</h1>
         <Post />
-        <LikeCom name={"noman"} />
-        <Comment />
+        {/* <LikeCom name={"noman"} /> */}
+        {/* <Comment /> */}
       </QueryClientProvider>
     </div>
   );

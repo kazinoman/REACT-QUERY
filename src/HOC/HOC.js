@@ -27,10 +27,11 @@ const HOC = (WrapperComponent) => {
   return function ({ ...props }) {
     console.log("Hoc compoent is called");
     const { name } = props;
+
     return (
       <div>
         <h2>Hoc COM</h2>
-        <WrapperComponent name={name} />;
+        <WrapperComponent name={name} address="dhaka" />;
       </div>
     );
   };
