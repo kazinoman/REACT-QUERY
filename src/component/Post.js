@@ -7,7 +7,7 @@ import axios from "../util/axiosInstance";
 import PostDetail from "./PostDetail";
 
 const fetchPost = async () => {
-  const data = await axios.get("/posts?_limit=10&_page=4");
+  const data = await axios.get("/posts?_limit=10&_page=1");
   return data;
 };
 
@@ -31,11 +31,24 @@ const Post = () => {
 
   return (
     <div>
-      <h1>Post data</h1>
+      <h3 style={{ textAlign: "left", margin: "0" }}>List of post !</h3>
       {data.data?.map((post) => (
-        <>
-          <h1 onClick={() => setSelectedPost(post)}>{post.title}</h1>
-        </>
+        <div
+          key={post.id}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <h2
+            onClick={() => setSelectedPost(post)}
+            style={{ padding: "10px", margin: "0", textAlign: "center" }}
+          >
+            {post.title}
+          </h2>
+        </div>
       ))}
       <div
         className="pages"
